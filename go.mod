@@ -1,4 +1,4 @@
-module wuerbo/portfolio-tracker
+module github.com/wuerbolo/portfolio-tracker
 
 go 1.17
 
