@@ -31,7 +31,7 @@ type DegiroTransaction struct {
 }
 
 func ParseDegiroTransactionsFile(filename string) (transactions []DegiroTransaction) {
-	csvFile, err := os.Open(filename)
+	csvFile, err := os.Open("public/" + filename)
 	if err != nil {
 		fmt.Println(err)
 	}

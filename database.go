@@ -49,15 +49,17 @@ func ConnectMongo() (client *mongo.Client) {
 	return
 }
 
-func InsertTransaction(client *mongo.Client, transaction DegiroTransaction) {
+func InsertTransaction(client *mongo.Client, transaction DegiroTransaction) (id string) {
 	collection := client.Database("portfolio-app").Collection("degiro-transactions")
 	insertResult, err := collection.InsertOne(context.TODO(), transaction)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	fmt.Println("Inserted a single document: ", insertResult.InsertedID)
+	id = fmt.Sprintf("%v", insertResult.InsertedID)
+	fmt.Println("Inserted a single document: ", id)
 
+	return
 }
 
 // func main() {

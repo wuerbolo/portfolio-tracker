@@ -3,7 +3,12 @@
   <div>
     <link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
     <!-- <line-chart :data="chartData"></line-chart> -->
-    <input type="file"><button>Upload!</button>
+    <!-- <input type="file"><button>Upload!</button> -->
+
+    <form action="http://localhost:8080/upload/" enctype="multipart/form-data" method="POST"> 
+    <input type="file" name="file" accept="*" />
+    <button type="submit">Submit </button>
+    </form>
   </div>
 </template>
 
