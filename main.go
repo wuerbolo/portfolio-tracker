@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	// "github.com/curtismckee/go-alpha-vantage" # ALPHA VANTAGE API
+	// "github.com/joho/godotenv"
 	"github.com/gin-gonic/gin"
 	"io"
 	"log"
@@ -81,3 +83,29 @@ func main() {
 	r.StaticFS("/file", http.Dir("public"))
 	r.Run()
 }
+
+// func main() {
+
+// 	err := godotenv.Load()
+// 	if err != nil {
+// 		log.Fatal("Error loading .env file")
+// 	}
+// 	apiKey := os.Getenv("ALPHA_VANTAGE_TOKEN")
+// 	// fmt.Printf(apikey)
+// 	client := av.NewClient(apiKey)
+
+// 	// res, err := client.StockTimeSeries( , "PLTR")
+// 	series := av.TimeSeriesDaily
+// 	symbol := "PLTR"
+// 	res, err := client.StockTimeSeries(series, symbol)
+// 	if err != nil {
+// 		log.Fatal("error loading series ", series, err)
+// 		return
+// 	}
+
+// 	for _, value := range res {
+// 		fmt.Printf("%s Close: %f \n", value.Time, value.Close)
+
+// 	}
+// 	fmt.Printf("%s %s with %d records\n", series, symbol, len(res))
+// }
